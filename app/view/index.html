@@ -25,14 +25,14 @@
                        onchange='showPicked(this)'>
             </div>
             <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+            <div class='analyze' style="padding-bottom:30px;">
+                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Examine</button>
+            </div>
             <div class='upload-label'>
                 <label id='upload-label'>No file chosen</label>
             </div>
             <div>
                 <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-            </div>
-            <div class='analyze' style="padding-bottom:30px;">
-                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Examine</button>
             </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">👎 Nope try again GrandmAI.</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">👎 Nope! Sorry GrandmAI.</button>
                         <button type="button" class="btn btn-success" data-dismiss="modal">👍 Yup! You are a genius GrandmaAI.</button>
                     </div>
                     </div>
