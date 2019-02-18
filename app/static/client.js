@@ -27,7 +27,7 @@ function analyze() {
             $('#exampleModal').modal('show');
             el('result-label').innerHTML = `${response['result']}`;
         }
-        el('analyze-button').innerHTML = 'Examine';
+        el('analyze-button').innerHTML = '🕵️ Examine';
     }
 
     var fileData = new FormData();
