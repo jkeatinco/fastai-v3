@@ -25,7 +25,7 @@ function analyze() {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
             $('#exampleModal').modal('show');
-            el('result-label').innerHTML = ${response['result']};
+            el('result-label').innerHTML = `${response['result']}`;
         }
         el('analyze-button').innerHTML = 'Examine';
     }
