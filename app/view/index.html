@@ -12,8 +12,9 @@
     <div class='center'>
         <div class='title'>👵 GrandmAI's Bong ⚗️ or Vase 🏺 Detector </div>
         <p>
-            Use an image of a bong or vase to let GrandmAI 👵 tell you the image is.
+            Use an image of a bong or vase to let GrandmAI 👵 investigate to determine what the image is.
         </p>
+        <p>Inspired by <a href="https://www.youtube.com/watch?v=JqRxJOPNnQE" target="_blank">🎥 Grandma's Boy</a></p>
         <div class='content'>
             <div class='no-display'>
                 <input id='file-input'
@@ -31,25 +32,25 @@
                 <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
             </div>
             <div class='analyze'>
-                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Examine</button>
             </div>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">👵 GrandmAI's thinks this image is a...</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class='result-label'>
-                            <label id='result-label'></label>
+                            <h2 id='result-label'></h2>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Nice Try GrandmAI</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">You are a genius GrandmaAI</button>
                     </div>
                     </div>
                 </div>

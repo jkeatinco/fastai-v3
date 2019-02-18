@@ -14,9 +14,9 @@ function showPicked(input) {
 
 function analyze() {
     var uploadFiles = el('file-input').files;
-    if (uploadFiles.length != 1) alert('Please select 1 file to analyze!');
+    if (uploadFiles.length != 1) alert('Please select 1 file to examine!');
 
-    el('analyze-button').innerHTML = 'Analyzing...';
+    el('analyze-button').innerHTML = 'Examining...';
     var xhr = new XMLHttpRequest();
     var loc = window.location
     xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
@@ -25,9 +25,9 @@ function analyze() {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
             $('#exampleModal').modal('show');
-            el('result-label').innerHTML = `Result = ${response['result']}`;
+            el('result-label').innerHTML = ${response['result']};
         }
-        el('analyze-button').innerHTML = 'Analyze';
+        el('analyze-button').innerHTML = 'Examine';
     }
 
     var fileData = new FormData();
