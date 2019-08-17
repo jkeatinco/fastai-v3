@@ -5,37 +5,56 @@
   <script src='../static/client.js'></script>
 </head>
 <body>
-<div>
-  <div class='center'>
-    <div class='title'>Classify Bear Images 🐻</div>
-    <p>
-      Use images of <strong>teddy</strong> bears, <strong>black</strong> bears, <strong>grizzly</strong> bears, or
-      all three!
-    </p>
-    <div class='content'>
-      <div class='no-display'>
-        <input id='file-input'
-               class='no-display'
-               type='file'
-               name='file'
-               accept='image/*'
-               onchange='showPicked(this)'>
-      </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
-      </div>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
-      </div>
-      <div class='result-label'>
-        <label id='result-label'></label>
+<div class='center'>
+  <div class='title'>👵 GrandmAI's Bong ⚗️ or Vase 🏺 Detector </div>
+  <p>
+    Take a picture of a bong ⚗️ or vase 🏺 to let GrandmAI 👵 investigate 🕵️ to determine what the image is.
+  </p>
+  <p>Inspired by <a href="https://www.youtube.com/watch?v=JqRxJOPNnQE" target="_blank">🎥 Grandma's Boy</a></p>
+  <div class='content'>
+    <div class='no-display'>
+      <input id='file-input' class='no-display' type='file' name='file' accept='image/*' onchange='showPicked(this)'>
+    </div>
+    <button class='choose-file-button' type='button' onclick='showPicker()'>📷 Take Photo</button>
+    <div class='analyze' style="padding-bottom:30px;">
+      <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>🕵️ Examine</button>
+    </div>
+    <div class='upload-label'>
+      <label id='upload-label'>No file chosen</label>
+    </div>
+    <div>
+      <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">👵 GrandmAI's thinks this is a...</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class='result-label'>
+              <h2 id='result-label'></h2>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class='choose-file-button' data-dismiss="modal">👎 Nope! Sorry GrandmAI.</button>
+            <button type="button" class='analyze-button' data-dismiss="modal">👍 Yup! You are a genius
+              GrandmaAI.</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <footer class="blockquote-footer">Made with 💜 by <cite title="Source Title"><a href="https://twitter.com/jkeatin"
+        target="_blank">jkeatin</a></cite></footer>
+  <footer class="blockquote-footer">Thanks to <cite title="Source Title"><a
+        href="https://course.fast.ai/deployment_render.html" target="_blank">Simon Willison</a></cite> | <cite
+      title="Source Title"><a href="https://www.fast.ai/" target="_blank">Fastai</a></cite> | <cite
+      title="Source Title"><a href="https://render.com/" target="_blank">Render</a></cite> | <cite
+      title="Source Title"><a href="https://www.crestle.ai/" target="_blank">Crestle.ai</a></cite></footer>
 </body>
 </html>
