@@ -1,12 +1,13 @@
-from starlette.applications import Starlette
-from starlette.responses import HTMLResponse, JSONResponse
-from starlette.staticfiles import StaticFiles
-from starlette.middleware.cors import CORSMiddleware
-import uvicorn, aiohttp, asyncio
-from io import BytesIO
-
+import aiohttp
+import asyncio
+import uvicorn
 from fastai import *
 from fastai.vision import *
+from io import BytesIO
+from starlette.applications import Starlette
+from starlette.middleware.cors import CORSMiddleware
+from starlette.responses import HTMLResponse, JSONResponse
+from starlette.staticfiles import StaticFiles
 
 export_file_url = 'https://drive.google.com/uc?export=download&id=1ngZLz-SlOA3a5C7tihmcLcw_cw_USAEt'
 export_file_name = 'export.pkl'
@@ -44,17 +45,20 @@ learn = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
 @app.route('/')
-def index(request):
-    html = path/'view'/'index.html'
-    return HTMLResponse(html.open().read())
+async def homepage(request):
+    html_file = path / 'view' / 'index.html'
+    return HTMLResponse(html_file.open().read())
+
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
-    data = await request.form()
-    img_bytes = await (data['file'].read())
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 
+
 if __name__ == '__main__':
-    if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
+    if 'serve' in sys.argv:
+        uvicorn.run(app=app, host='0.0.0.0', port=5000, log_level="info")
